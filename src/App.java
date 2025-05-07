@@ -27,11 +27,11 @@ public class App {
 
             if(higherNum < currentNum){
                 higherNum  = currentNum;
+                lastArray[i] = higherNum;
+            //  currentNum = 0;
 
             }
 
-            // lastArray[i] = higherNum;
-            // currentNum = 0;
             // higherNum = 0;
 
         }
