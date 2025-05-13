@@ -1,9 +1,10 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class App {
     public static void main(String[] args) throws Exception {
         int[] arrayInt = { 4, 9, 3, 7 };
-        String[] arrayString = { "piero", "pierone", "pierluigi", "piergianpaolo" };
+        String[] arrayString = { "asdddddddd", "a", "pollo", "precipitevolissimevolmente", "boh" };
 
         System.out.println("Ordinamento array numerico: ");
         sortingNumbersMethod(arrayInt);
@@ -13,12 +14,17 @@ public class App {
 
         // algoritmo 2
         int[] arrayInt2 = { 4, 9, 3, 7, 12 };
+        String[] arrayString2 = { "asdddddddd", "a", "pollo", "precipitevolissimevolmente", "boh" };
 
-        for (int num : arrayInt2) {
-            System.out.println(num);
+        System.out.println("Metodo lento numeri");
+        for (int i = 0; i < arrayInt2.length; i++) {
+            System.out.println(sortingNumbersMethod2(arrayInt2)[i]);
         }
 
-        sortingNumbersMethod2(arrayInt2);
+        System.out.println("Metodo lento stringhe");
+        for (int i = 0; i < arrayString2.length; i++) {
+            System.out.println(sortingStringsMethod2(arrayString2)[i]);
+        }
     }
 
     public static int[] sortingNumbersMethod(int[] arrayInt) {
@@ -115,7 +121,46 @@ public class App {
 
     public static int[] sortingNumbersMethod2(int[] array) {
 
-        
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - 1; j++) {
+                for (int j2 = 0; j2 < array.length; j2++) {
+                    for (int k = 0; k < array.length; k++) {
+                        for (int k2 = 0; k2 < array.length; k2++) {
+                            for (int l = 0; l < array.length; l++) {
+                                if (array[j] > array[j + 1]) {
+                                    int num = array[j];
+                                    array[j] = array[j + 1];
+                                    array[j + 1] = num;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return array;
+    }
+
+    public static String[] sortingStringsMethod2(String[] array) {
+
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - 1; j++) {
+                for (int j2 = 0; j2 < array.length; j2++) {
+                    for (int k = 0; k < array.length; k++) {
+                        for (int k2 = 0; k2 < array.length; k2++) {
+                            for (int l = 0; l < array.length; l++) {
+                                if (array[j].length() > array[j + 1].length()) {
+                                    String string = array[j];
+                                    array[j] = array[j + 1];
+                                    array[j + 1] = string;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         return array;
     }
